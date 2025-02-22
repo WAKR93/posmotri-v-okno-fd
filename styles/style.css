@@ -63,7 +63,8 @@ ol {
   padding: 0 30px;
   gap: 30px;
 }
-
+/*Шаг 2 по инструкции. Размер видео. 
+Вопрос в относительности размеров контейнера и размера видео*/
 .result {
   grid-area: result;
 }
@@ -71,6 +72,13 @@ ol {
 .result__video-container {
   height: 386px;
   width: 100%;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  width: 711px;
+  height: 386px;
+  object-fit: cover;
 }
 
 .search-form {
