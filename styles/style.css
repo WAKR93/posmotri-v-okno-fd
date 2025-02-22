@@ -56,10 +56,9 @@ ol {
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 711px 399px;
   grid-template-areas: "result content__details";
   align-items: end;
-  height: 534px;
   margin: 133px 0;
   padding: 0 30px;
   gap: 30px;
@@ -71,12 +70,14 @@ ol {
 
 .result__video-container {
   height: 386px;
-  width: 711px;
+  width: 100%;
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: start;
 }
 
 .content__details {
