@@ -88,6 +88,11 @@ ol {
   align-items: start;
 }
 
+.search-form__fieldset-title {
+  font-weight: 400;
+  line-height: 21.6px;
+}
+
 .content__details {
   grid-area: content__details;
   max-width: 100%;
@@ -96,6 +101,15 @@ ol {
 
 .title {
   padding-bottom: 26px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 70.5px;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
 }
 
 .content__list-container {
@@ -108,17 +122,47 @@ ol {
   gap: 30px;
 }
 
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
 .content__video-card {
   display: flex;
   align-items: start;
 }
 
 .content__video-card-description-container {
-  flex-grow: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  width: 196px;
+  padding-bottom: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;    
+}
+
+.content__video-card-description {
+    overflow: hidden;
+    width: 196px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    font-weight: 400;
+    line-height: 16.2px;
+    
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  flex: 0 0 194px;
   height: 103px;
   object-fit: cover;
   object-position: center;
