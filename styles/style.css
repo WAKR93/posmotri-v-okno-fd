@@ -8,6 +8,16 @@ html {
   block-size: 100%;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .page {
   display: flex;
   flex-wrap: wrap;
@@ -69,6 +79,12 @@ ol {
 }
 
 .result__video-container {
+  /*
+  https://app.pachca.com/chats?thread_message_id=440381706
+
+  https://app.pachca.com/chats/18145842?message=441912645&thread_message_id=441912645
+  прочитать и понять 
+  */
   height: 100%;
   width: 711px;
   margin-bottom: 16px;
@@ -88,9 +104,52 @@ ol {
   align-items: start;
 }
 
+.search-form__fieldset {
+  border-style: none;
+}
+
 .search-form__fieldset-title {
   font-weight: 400;
   line-height: 21.6px;
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+input {
+  width: 225px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  border: 1px solid rgb(255 255 255/ 0.3);
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 3px;
+  /*
+  отмена выделения в состоянии activ
+
+  https://app.pachca.com/chats?thread_message_id=440694140
+
+  */
+}
+
+input:focus {
+  outline: none;
 }
 
 .content__details {
@@ -130,6 +189,11 @@ ol {
 .content__video-card {
   display: flex;
   align-items: start;
+
+  /*
+  обводка для карточек
+  https://app.pachca.com/chats?thread_message_id=440603037
+  */
 }
 
 .content__video-card-description-container {
@@ -148,17 +212,29 @@ ol {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;    
+  /*
+  кусок кода написаный наставником
+  .content__video-card-title {
+    margin-block-end: 6px;
+    font-family: Oswald, sans-serif;
+    font-size: 30px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+  */
 }
 
 .content__video-card-description {
+    font-weight: 400;
+    line-height: 16.2px;
     overflow: hidden;
     width: 196px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    font-weight: 400;
-    line-height: 16.2px;
-    
 }
 
 .content__video-card-thumbnail {
