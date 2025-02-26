@@ -79,15 +79,10 @@ ol {
 }
 
 .result__video-container {
-  /*
-  https://app.pachca.com/chats?thread_message_id=440381706
-
-  https://app.pachca.com/chats/18145842?message=441912645&thread_message_id=441912645
-  прочитать и понять 
-  */
-  height: 100%;
+  position: relative;
   width: 711px;
-  margin-bottom: 16px;
+  height: 386px;
+  margin-block-end: 16px;
 }
 
 .result__video {
@@ -125,31 +120,57 @@ ol {
   gap: 15px;
 }
 
-input {
+.search-form__textfield {
   width: 225px;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  height: 27px;
+  font-family: inherit;
+  font-size: inherit;
   line-height: 21.6px;
-  border: 1px solid rgb(255 255 255/ 0.3);
-  border-left: none;
-  border-right: none;
+  border-style: none;
+  border-top: 1px solid rgb(255 255 255/ 0.3);
+  border-bottom: 1px solid rgb(255 255 255/ 0.3);
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.search-form__label:has(:focus-visible) {
+.search-form__textfield:active {
+  border-left: 1px solid rgb(255 255 255/ 0.3);
+  border-right: 1px solid rgb(255 255 255/ 0.3);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:not(:active):focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 3px;
-  /*
-  отмена выделения в состоянии activ
-
-  https://app.pachca.com/chats?thread_message_id=440694140
-
-  */
 }
 
-input:focus {
-  outline: none;
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  vertical-align: middle;
+  border:1px solid #fff;
+}
+
+.search-form__pseudo-checkbox:active::after {
+  margin: auto;
+  position: absolute;  
+  inset: 0;
+  content: '';
+  display: inline-block;
+  border: 1px solid #fff;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
 }
 
 .content__details {
@@ -197,7 +218,7 @@ input:focus {
 }
 
 .content__video-card-description-container {
-  flex: 1 1 auto;
+  flex: 0 0 196px;
   min-width: 0;
 }
 
@@ -207,38 +228,23 @@ input:focus {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
-  width: 196px;
-  padding-bottom: 6px;
+  margin-block-end: 6px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;    
-  /*
-  кусок кода написаный наставником
-  .content__video-card-title {
-    margin-block-end: 6px;
-    font-family: Oswald, sans-serif;
-    font-size: 30px;
-    line-height: 1;
-    text-transform: uppercase;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-  */
 }
 
 .content__video-card-description {
     font-weight: 400;
     line-height: 16.2px;
     overflow: hidden;
-    width: 196px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
 }
 
 .content__video-card-thumbnail {
-  flex: 0 0 194px;
+  width: 194px;
   height: 103px;
   object-fit: cover;
   object-position: center;
