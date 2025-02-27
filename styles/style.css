@@ -113,6 +113,11 @@ ol {
 .search-form__label {
   display: flex;
   width: fit-content;
+  align-items: center;
+}
+
+.search-form__label-text {
+  line-height: 18px;
 }
 
 .search-form__checkbox-list {
@@ -148,29 +153,67 @@ ol {
 
 .search-form__label:has(:not(:active):focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 3px;
+  outline-offset: 1px;
+}
+
+.search-form__label:hover:has(.search-form__pseudo-checkbox) {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .search-form__pseudo-checkbox {
   position: relative;
-  display: inline-block;
-  width: 19px;
-  height: 19px;
+  display: flex;
+  inline-size: 19px;
+  block-size: 19px;
+  justify-content: center;
+  align-items: center;
   margin-right: 5px;
-  vertical-align: middle;
   border:1px solid #fff;
 }
 
-.search-form__pseudo-checkbox:active::after {
-  margin: auto;
-  position: absolute;  
-  inset: 0;
+.search-form__checkbox:checked +.search-form__pseudo-checkbox::after {  
   content: '';
-  display: inline-block;
-  border: 1px solid #fff;
-  width: 15px;
-  height: 15px;
+  min-inline-size: 15px;
+  min-block-size: 15px;
   background-color: #fff;
+  color: #fff;
+}
+
+.button {
+  border: 1px solid #fff;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.search-form__submit-button {
+  align-self: self-end;
+  inline-size: 194px;
+  block-size: 34px;
+}
+
+.more-button {
+  margin-top: 30px;
+  height: 34px;
+  width: 100%;
+}
+
+.button:focus {
+  outline: none;
+}
+.button:active {
+  background-color: #545050;
+}
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button:not(:active):focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .content__details {
@@ -201,6 +244,22 @@ ol {
   display: grid;
   gap: 30px;
 }
+.content__list-item {
+  padding: 0 3px;
+}
+.content__list-item:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:focus {
+  outline: 0;
+}
+
+.content__card-link_current {
+  display: block;
+  background-color: #545050;
+}
 
 .content__card-link {
   text-decoration: none;
@@ -210,11 +269,6 @@ ol {
 .content__video-card {
   display: flex;
   align-items: start;
-
-  /*
-  обводка для карточек
-  https://app.pachca.com/chats?thread_message_id=440603037
-  */
 }
 
 .content__video-card-description-container {
@@ -226,7 +280,7 @@ ol {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 40px;
   text-transform: uppercase;
   margin-block-end: 6px;
   overflow: hidden;
@@ -236,15 +290,16 @@ ol {
 
 .content__video-card-description {
     font-weight: 400;
-    line-height: 16.2px;
+    line-height: 20px;/*значение выше 16.2px поскольку не могу сместить offset на тексте списка*/
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
 }
 
-.content__video-card-thumbnail {
-  width: 194px;
+.content__video-card-thumbnail {/*Разобраться с обводкой списка content__card-link_current*/
+  flex: 0 0 194px;
+  width: 100%;
   height: 103px;
   object-fit: cover;
   object-position: center;
