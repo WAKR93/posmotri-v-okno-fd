@@ -239,7 +239,7 @@ ol {
 .content__list-container {
   position: relative;
   height: 298px;
-  overflow: scroll;
+  overflow: auto;
   padding: 2px 3px 0px 3px;
 }
 
@@ -287,7 +287,6 @@ ol {
   font-size: 30px;
   line-height: 40px;
   text-transform: uppercase;
-  margin-block-end: 6px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;    
