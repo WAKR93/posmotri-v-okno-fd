@@ -1,1 +1,1 @@
-https://github.com/WAKR93/posmotri-v-okno-fd.git
+git@github.com:WAKR93/posmotri-v-okno-fd.git
