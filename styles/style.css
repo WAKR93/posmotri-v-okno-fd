@@ -185,15 +185,16 @@ ol {
 .more-button {
   margin: 30px 0px 0;
   padding: 5px 0;
-  line-height: 21.6px;
-  inline-size: 100%; /*calc(100% - 3px);*/
+  inline-size: calc(100% - 1px);
 }
 
 .button {
   border: 1px solid currentColor;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
   background-color: transparent;
 }
 
@@ -225,6 +226,7 @@ ol {
   grid-area: content__details;
   max-width: 100%;
   max-height: 100%;
+  padding-bottom: 2px;
 }
 
 .title {
